@@ -1,0 +1,32 @@
+binary_repositories
+=====
+
+{{DESCRIPTION}}
+
+Version: {{VERSION}}
+
+**Built-in features:**
+
+- Access repositories through the `file` protocol
+- Access repositories through the `http/https` protocol
+- Access repositories through the custom protocol
+- Access to the binary "pub" repository 
+- Access to the "raw GitHub" repository
+- File based package provider (eg. through the files `package.lst`, `versions.lst`)
+- Package manager for installing and resolving binary files
+- Package providers for list packages and their versions
+- Repository protocols for reading and writing binary files
+- Versioning through the `semantic versioning` 
+- Versioning through the custom versioning
+
+**Example of resolving an installed file**
+
+```dart
+{{example/example_resolve.dart}}
+```
+
+**Example of installing file from GitHub file based repository**
+
+```dart
+{{example/example_install.dart}}
+```
