@@ -1,5 +1,8 @@
 part of binary_repositories;
 
+/**
+ * Implementation of the [PackageProvider] for the packages in "pub cache".
+ */
 class PubPackageProvider implements PackageProvider {
   String getPackageRoot(Repository repository, String package, String version) {
     if (repository == null) {

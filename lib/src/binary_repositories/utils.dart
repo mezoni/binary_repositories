@@ -20,7 +20,7 @@ class _Utils {
     }
 
     if (value.contains("\\")) {
-      throw new ArgumentError.value(value, name, "Backslash character not allowed");
+      throw new ArgumentError.value(value, name, "Backslash character '\\' not allowed");
     }
 
     if (allowEmpty == null) {

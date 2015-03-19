@@ -1,8 +1,14 @@
 part of binary_repositories;
 
+/**
+ * Binary platform resolver determines the running binary platform.
+ */
 class BinaryPlatformResolver {
   String _name;
 
+  /**
+   * Returns the name of the running binary platform in the form of the "ARCH/OS".
+   */
   String get name {
     if (_name == null) {
       var arch = "unknown";

@@ -1,5 +1,8 @@
 part of binary_repositories;
 
+/**
+ * Implementation of the [RepositoryProtocol] over the "file" protocols.
+ */
 class FileRepositoryProtocol implements RepositoryProtocol {
   Future<bool> exists(Repository repository, String resource) {
     if (repository == null) {

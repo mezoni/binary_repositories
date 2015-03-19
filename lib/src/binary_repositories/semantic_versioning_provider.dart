@@ -1,5 +1,8 @@
 part of binary_repositories;
 
+/**
+ * Semantic versioning provider in accordance with the rules specified at http://semver.org.
+ */
 class SemanticVersioningProvider implements VersioningProvider {
   bool allows(String version, String constraint) {
     if (version == null) {

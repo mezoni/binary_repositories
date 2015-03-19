@@ -1,5 +1,8 @@
 part of binary_repositories;
 
+/**
+ * Implementation of the [RepositoryProtocol] over the "http/https" protocols.
+ */
 class HttpRepositoryProtocol implements RepositoryProtocol {
   Future<bool> exists(Repository repository, String resource) async {
     if (repository == null) {

@@ -1,10 +1,23 @@
 part of binary_repositories;
 
+/**
+ * Base implementation of the [Repository].
+ */
 abstract class RepositoryBase implements Repository {
   final RepositoryProtocol repositoryProtocol;
 
   final PackageProvider packageProvider;
 
+  /**
+   * Creates the [RepositoryBase].
+   *
+   * Parameters:
+   *   [RepositoryProtocol] repositoryProtocol
+   *   Repository protocol
+   *
+   *   [PackageProvider] packageProvider
+   *   Package provider
+   */
   RepositoryBase(this.repositoryProtocol, this.packageProvider) {
     if (repositoryProtocol == null) {
       throw new ArgumentError.notNull("repositoryProtocol");

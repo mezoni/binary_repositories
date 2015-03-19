@@ -1,5 +1,8 @@
 part of binary_repositories;
 
+/**
+ * Implementation of the [PackageProvider] based on storage of information about packages in separate files.
+ */
 class FileBasedPackageProvider implements PackageProvider {
   String _packagesFile;
 
@@ -7,6 +10,19 @@ class FileBasedPackageProvider implements PackageProvider {
 
   String _versionsFile;
 
+  /**
+   * Creates the [FileBasedPackageProvider].
+   *
+   * Parameters:
+   *   [String] packagesDirectory
+   *   Relative path to the packages directory
+   *
+   *   [String] packagesFile
+   *   Relative path to the file which contains the list of packages
+   *
+   *   [String] versionsFile
+   *   Relative path (from the package root) to the file which contains the list of package versions
+   */
   FileBasedPackageProvider(String packagesDirectory, String packagesFile, String versionsFile) {
     _Utils.checkRelativePath(packagesFile, "packagesFile");
     _Utils.checkRelativePath(packagesDirectory, "packagesDirectory");
