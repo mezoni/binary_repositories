@@ -25,7 +25,7 @@ class GitHubRawRepository extends RepositoryBase {
       throw new ArgumentError("Repository name should not be empty");
     }
 
-    var path = lib_path.join(user, repository, "master");
+    var path = _Utils.joinPath([user, repository, "master"]);
     _baseUrl = new Uri.https("raw.githubusercontent.com", path);
   }
 

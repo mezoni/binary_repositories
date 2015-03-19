@@ -56,7 +56,7 @@ class HttpRepositoryProtocol implements RepositoryProtocol {
     var baseUrl = repository.baseUrl;
     var scheme = baseUrl.scheme;
     var path = baseUrl.toString();
-    path = lib_path.join(path, resource);
+    path = _Utils.joinPath([path, resource]);
     switch (scheme) {
       case "http":
       case "https":

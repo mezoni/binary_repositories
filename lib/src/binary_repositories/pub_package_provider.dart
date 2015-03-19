@@ -33,7 +33,7 @@ class PubPackageProvider implements PackageProvider {
     var url = repository.baseUrl;
     var path = url.toFilePath();
     var packages = new Set<String>();
-    var mask = lib_path.join(path, "*");
+    var mask = _Utils.joinPath([path, "*"]);
     mask = mask.replaceAll("\\", "/");
     var files = FileUtils.glob(mask);
     for (var file in files) {
@@ -65,7 +65,7 @@ class PubPackageProvider implements PackageProvider {
 
     var path = repository.baseUrl.toFilePath();
     var versions = <String>[];
-    var mask = lib_path.join(path, "$package-*");
+    var mask = _Utils.joinPath([path, "$package-*"]);
     mask = mask.replaceAll("\\", "/");
     var files = FileUtils.glob(mask);
     for (var file in files) {

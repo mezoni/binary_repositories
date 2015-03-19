@@ -60,7 +60,7 @@ class FileRepositoryProtocol implements RepositoryProtocol {
     }
 
     var path = baseUrl.toFilePath();
-    path = lib_path.join(path, resource);
+    path = _Utils.joinPath([path, resource]);
     return new Uri.file(path);
   }
 }

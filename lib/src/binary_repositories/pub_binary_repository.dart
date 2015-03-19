@@ -5,7 +5,7 @@ class PubBinaryRepository extends RepositoryBase {
 
   PubBinaryRepository() : super(new FileRepositoryProtocol(), new PubPackageProvider()) {
     var cache = _getPubCache();
-    var path = lib_path.join(cache, "binary");
+    var path = lib_path.join(cache, "binary").replaceAll("\\", "/");
     path = lib_path.normalize(path);
     _baseUrl = new Uri.file(path);
   }
@@ -14,10 +14,10 @@ class PubBinaryRepository extends RepositoryBase {
 
   String _getPubCache() {
     if (Platform.environment.containsKey('PUB_CACHE')) {
-      return Platform.environment['PUB_CACHE'];
+      return lib_path.normalize(Platform.environment['PUB_CACHE']).replaceAll("\\", "/");
     } else if (Platform.isWindows) {
       var path = Platform.environment['APPDATA'];
-      return lib_path.join(path, 'Pub', 'Cache');
+      return lib_path.join(path, 'Pub', 'Cache').replaceAll("\\", "/");
     } else {
       return '${Platform.environment['HOME']}/.pub-cache';
     }

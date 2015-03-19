@@ -64,11 +64,11 @@ class PackageManager {
     versions.sort((a, b) => versioningProvider.compare(b, a));
     for (var version in versions) {
       String path = await input.getPackageRoot(package, version);
-      path = lib_path.join(path, filepath);
+      path = _Utils.joinPath([path, filepath]);
       if (await input.exists(path)) {
         List<int> bytes = await input.read(path);
         path = await output.getPackageRoot(package, version);
-        path = lib_path.join(path, filepath);
+        path = _Utils.joinPath([path, filepath]);
         await output.write(path, bytes);
         newVersion = version;
         break;
@@ -101,7 +101,7 @@ class PackageManager {
     for (var version in versions) {
       if (versioningProvider.allows(version, constraint)) {
         String relativePath = await repository.getPackageRoot(package, version);
-        relativePath = lib_path.join(relativePath, filepath);
+        relativePath = _Utils.joinPath([relativePath, filepath]);
         if (await repository.exists(relativePath)) {
           return repository.getUrl(relativePath);
         }

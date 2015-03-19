@@ -33,7 +33,7 @@ class FileBasedPackageProvider implements PackageProvider {
       throw new ArgumentError.notNull("version");
     }
 
-    var root = lib_path.join(_packagesDirectory, package, version);
+    var root = _Utils.joinPath([_packagesDirectory, package, version]);
     return root;
   }
 
@@ -72,7 +72,7 @@ class FileBasedPackageProvider implements PackageProvider {
       throw new ArgumentError("Package name should not be empty");
     }
 
-    var path = lib_path.join(_packagesDirectory, package, _versionsFile);
+    var path = _Utils.joinPath([_packagesDirectory, package, _versionsFile]);
     var versions = <String>[];
     if (!await repository.exists(path)) {
       return versions;
