@@ -17,7 +17,13 @@ void main(List<String> args) {
     FileUtils.touch([t.name], create: true);
   });
 
-  file(README_MD, [README_MD_IN, PUBSPEC_YAML, EXAMPLE_INSTALL_DART, EXAMPLE_RESOLVE_DART], (Target t, Map args) {
+  file(README_MD, [
+    README_MD_IN,
+    PUBSPEC_YAML,
+    EXAMPLE_GIT_HUB_INSTALLER_DART,
+    EXAMPLE_INSTALL_DART,
+    EXAMPLE_RESOLVE_DART
+  ], (Target t, Map args) {
     var sources = t.sources.toList();
     var template = new File(sources.removeAt(0)).readAsStringSync();
     // Remove "pubspec.yaml"
@@ -88,6 +94,7 @@ void main(List<String> args) {
 
 const String CHANGE_LOG = "tool/change.log";
 const String CHANGELOG_MD = "CHANGELOG.md";
+const String EXAMPLE_GIT_HUB_INSTALLER_DART = "example/example_git_hub_installer.dart";
 const String EXAMPLE_INSTALL_DART = "example/example_install.dart";
 const String EXAMPLE_RESOLVE_DART = "example/example_resolve.dart";
 const String PUBSPEC_YAML = "pubspec.yaml";

@@ -19,6 +19,12 @@ Version: {{VERSION}}
 - Versioning through the `semantic versioning` 
 - Versioning through the custom versioning
 
+**Example of using built-in installer "GitHubInstaller"**
+
+```dart
+{{example/example_git_hub_installer.dart}}
+```
+
 **Example of resolving an installed file**
 
 ```dart

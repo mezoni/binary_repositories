@@ -1,3 +1,8 @@
+## 0.0.4
+
+- Added example of use `GitHubInstaller`
+- Added library `git_hub_installer` with a `GitHubInstaller`
+
 ## 0.0.3
 
 - Added documentation in the comments
